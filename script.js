@@ -5,8 +5,10 @@ const yesBtn = document.getElementById("yes-btn");
 const noBtn = document.getElementById("no-btn");
 
 yesBtn.addEventListener("click", () => {
-  question.innerHTML = "Yay, congratulations!!! for always being Mine.";
-  question.innerHTML = "Click" <a href="index1.html">here </a> "for more";
+  question.innerHTML = `
+  Yay, congratulations!!! for always being Mine.<br>
+  Click <a href="index1.html">here</a> for more.
+`;
   gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
 });
 
