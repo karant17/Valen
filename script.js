@@ -1,22 +1,47 @@
-const wrapper = document.getElementById("wrapper");
 const question = document.getElementById("question");
 const gif = document.getElementById("gif");
 const yesBtn = document.getElementById("yes-btn");
 const noBtn = document.getElementById("no-btn");
+const btnGroup = document.getElementById("btn-group");
 
 yesBtn.addEventListener("click", () => {
-  question.innerHTML = "Yay, see you on the 14th of Feb!";
-  gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+  // Change text
+  question.innerHTML = "Yay, Congratulations!!! For always being mine❤️";
+
+  // Change gif
+  gif.src = "https://media.giphy.com/media/UUnoFuiomAN9ueUNP/giphy.gif";
+
+  // Remove old buttons
+  btnGroup.innerHTML = "";
+
+  // Create new button
+  const nextBtn = document.createElement("a");
+  nextBtn.href = "index1.html";
+  nextBtn.textContent = "Continue 💌";
+
+  // Style it (inline so it works without CSS)
+  nextBtn.style.display = "inline-block";
+  nextBtn.style.marginTop = "20px";
+  nextBtn.style.padding = "12px 20px";
+  nextBtn.style.background = "#ff4d6d";
+  nextBtn.style.color = "#fff";
+  nextBtn.style.textDecoration = "none";
+  nextBtn.style.borderRadius = "8px";
+  nextBtn.style.fontSize = "16px";
+
+  btnGroup.appendChild(nextBtn);
 });
 
+// Keep the playful No button
 noBtn.addEventListener("mouseover", () => {
-  const noBtnRect = noBtn.getBoundingClientRect();
-  const maxX = window.innerWidth - noBtnRect.width;
-  const maxY = window.innerHeight - noBtnRect.height;
+  const rect = noBtn.getBoundingClientRect();
+  const maxX = window.innerWidth - rect.width;
+  const maxY = window.innerHeight - rect.height;
 
-  const randomX = Math.floor(Math.random() * maxX);
-  const randomY = Math.floor(Math.random() * maxY);
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
 
-  noBtn.style.left = randomX + "px";
-  noBtn.style.top = randomY + "px";
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
 });
